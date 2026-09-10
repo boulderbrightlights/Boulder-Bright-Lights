@@ -43,6 +43,6 @@ Then open http://localhost:8000.
 
 ## Editing content
 
-- Phone number / email: search-and-replace `7207173555` and `HirschLimited@gmail.com` across the HTML files.
+- Phone number / email: search-and-replace `7207173555` and `Boulderbrightlights@gmail.com` across the HTML files.
 - Colors and fonts: CSS custom properties at the top of `css/style.css`.
 - Contact form currently opens the visitor's email client (no backend). To wire it to a real form service (e.g. Formspree, Web3Forms), swap the `fetch`/`mailto` logic in `js/main.js`.

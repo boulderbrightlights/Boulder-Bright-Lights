@@ -123,7 +123,7 @@ function initContactForm() {
     const body = encodeURIComponent(
       `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
     );
-    window.location.href = `mailto:HirschLimited@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:Boulderbrightlights@gmail.com?subject=${subject}&body=${body}`;
     status.textContent = 'Opening your email app to send this — talk soon!';
     form.reset();
   });

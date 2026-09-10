@@ -72,9 +72,11 @@ section { position: relative; }
 }
 .eyebrow::before {
   content: '';
-  width: 26px;
-  height: 1px;
+  width: 6px;
+  height: 6px;
   background: var(--gold-500);
+  border-radius: 1px;
+  transform: rotate(45deg);
   display: inline-block;
 }
 
