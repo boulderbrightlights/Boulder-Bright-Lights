@@ -8,20 +8,51 @@
 <link rel="icon" href="images/BBlights logo.png" />
 <link rel="stylesheet" href="css/style.css" />
 <style>
+  .quote-section {
+    position: relative;
+    background-image:
+      radial-gradient(rgba(199,154,69,0.16) 1.4px, transparent 1.4px),
+      radial-gradient(rgba(199,154,69,0.12) 1.4px, transparent 1.4px);
+    background-size: 42px 42px;
+    background-position: 0 0, 21px 21px;
+  }
+  .quote-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--gold-600);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .quote-badge svg { width: 15px; height: 15px; }
   .calendly-wrap {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
     background: var(--white);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-    border: 1px solid rgba(199,154,69,0.16);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(199,154,69,0.18);
     overflow: hidden;
     padding: 8px;
+  }
+  .calendly-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--pine-700), var(--gold-400) 25%, var(--berry) 50%, var(--gold-400) 75%, var(--pine-700));
+    z-index: 1;
   }
   .calendly-inline-widget { min-width: 280px; height: 750px; }
   .quote-alt {
     max-width: 900px;
-    margin: 22px auto 0;
+    margin: 26px auto 0;
     text-align: center;
     font-size: 0.92rem;
     color: var(--ink-700);
@@ -65,6 +96,7 @@
 </header>
 
 <section class="page-hero">
+  <canvas id="snow-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="eyebrow">Free In-Home Consultation</div>
     <h1>Book Your Free Lighting Consultation</h1>
@@ -72,8 +104,43 @@
   </div>
 </section>
 
-<section class="section">
+<div class="light-strand" aria-hidden="true">
+  <svg viewBox="0 0 1200 26" preserveAspectRatio="none">
+    <path d="M0 4 Q 50 26 100 4 T 200 4 T 300 4 T 400 4 T 500 4 T 600 4 T 700 4 T 800 4 T 900 4 T 1000 4 T 1100 4 T 1200 4" stroke="#c79a45" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <g fill="#ddb968">
+      <circle cx="25" cy="10"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="100" cy="16"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>
+      <circle cx="175" cy="10"><animate attributeName="opacity" values="1;0.4;1" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="250" cy="16"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="325" cy="10"><animate attributeName="opacity" values="1;0.3;1" dur="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="400" cy="16"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.9s" repeatCount="indefinite"/></circle>
+      <circle cx="475" cy="10"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="550" cy="16"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite"/></circle>
+      <circle cx="625" cy="10"><animate attributeName="opacity" values="1;0.3;1" dur="2.7s" repeatCount="indefinite"/></circle>
+      <circle cx="700" cy="16"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.3s" repeatCount="indefinite"/></circle>
+      <circle cx="775" cy="10"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
+      <circle cx="850" cy="16"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="925" cy="10"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="1000" cy="16"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite"/></circle>
+      <circle cx="1075" cy="10"><animate attributeName="opacity" values="1;0.4;1" dur="2.9s" repeatCount="indefinite"/></circle>
+      <circle cx="1150" cy="16"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></circle>
+    </g>
+    <g fill="none" stroke="#ddb968" stroke-width="1">
+      <circle cx="25" cy="10" r="3"/><circle cx="100" cy="16" r="3"/><circle cx="175" cy="10" r="3"/><circle cx="250" cy="16" r="3"/>
+      <circle cx="325" cy="10" r="3"/><circle cx="400" cy="16" r="3"/><circle cx="475" cy="10" r="3"/><circle cx="550" cy="16" r="3"/>
+      <circle cx="625" cy="10" r="3"/><circle cx="700" cy="16" r="3"/><circle cx="775" cy="10" r="3"/><circle cx="850" cy="16" r="3"/>
+      <circle cx="925" cy="10" r="3"/><circle cx="1000" cy="16" r="3"/><circle cx="1075" cy="10" r="3"/><circle cx="1150" cy="16" r="3"/>
+    </g>
+  </svg>
+</div>
+
+<section class="section quote-section">
   <div class="container">
+    <div class="quote-badge reveal">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 6.2L20 10l-6.4 1.8L12 18l-1.6-6.2L4 10l6.4-1.8L12 2z"/></svg>
+      No Obligation &middot; Come to You &middot; 30 Minutes
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 6.2L20 10l-6.4 1.8L12 18l-1.6-6.2L4 10l6.4-1.8L12 2z"/></svg>
+    </div>
     <div class="calendly-wrap reveal">
       <div class="calendly-inline-widget" data-url="https://calendly.com/boulderbrightlights/30min"></div>
     </div>
