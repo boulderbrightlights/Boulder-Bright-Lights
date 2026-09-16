@@ -3,10 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Get a Free Quote | Boulder Bright Lights</title>
-<meta name="description" content="Request your free Christmas light installation quote in Boulder, CO. Tell us about your home and the colors you want, and we'll follow up fast." />
+<title>Book a Free Consultation | Boulder Bright Lights</title>
+<meta name="description" content="Book your free in-home Christmas light consultation in Boulder, CO. We'll come measure your home, talk through design and colors, and scope the project, no obligation." />
 <link rel="icon" href="images/BBlights logo.png" />
 <link rel="stylesheet" href="css/style.css" />
+<style>
+  .calendly-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(199,154,69,0.16);
+    overflow: hidden;
+    padding: 8px;
+  }
+  .calendly-inline-widget { min-width: 280px; height: 750px; }
+  .quote-alt {
+    max-width: 900px;
+    margin: 22px auto 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--ink-700);
+  }
+</style>
 </head>
 <body>
 
@@ -46,37 +66,22 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="eyebrow">Free Quote</div>
-    <h1>Let's Design Your Display</h1>
-    <p>Tell us a little about your home and the look you're going for. We'll follow up fast with a custom quote, usually within a day.</p>
+    <div class="eyebrow">Free In-Home Consultation</div>
+    <h1>Book Your Free Design Visit</h1>
+    <p>Pick a time below and we'll come to your home to take measurements, walk your rooflines, talk through colors and style, and put together the full project scope, no obligation.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="quote-wrap reveal">
-      <form class="form-card" id="quote-form" novalidate>
-        <h3>Request Your Free Quote</h3>
-        <p>No obligation, just a real answer from a real person on our crew.</p>
-        <div class="field">
-          <label for="q-name">Full Name</label>
-          <input type="text" id="q-name" name="name" placeholder="Santa's Little Helper" required />
-        </div>
-        <div class="field">
-          <label for="q-phone">Phone Number</label>
-          <input type="tel" id="q-phone" name="phone" placeholder="(720) 555-0123" required />
-        </div>
-        <div class="field">
-          <label for="q-details">Tell Us About Your Home &amp; Colors</label>
-          <textarea id="q-details" name="details" rows="6" placeholder="Home style, rooflines and trees, and the colors or look you're picturing (classic warm white, multicolor, red &amp; green, icicle lights, etc.)" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;">Request My Free Quote</button>
-        <p class="form-status" id="quote-status" role="status"></p>
-        <p class="form-note">Sending this opens your email app addressed to Boulderbrightlights@gmail.com. Prefer to talk now? <a href="tel:7207173555">Call or text 720-717-3555</a>.</p>
-      </form>
+    <div class="calendly-wrap reveal">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/boulderbrightlights/30min"></div>
     </div>
+    <p class="quote-alt">Prefer to just call or text? <a href="tel:7207173555">720-717-3555</a> &middot; <a href="mailto:Boulderbrightlights@gmail.com">Boulderbrightlights@gmail.com</a></p>
   </div>
 </section>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <footer class="footer">
   <div class="container">
