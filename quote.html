@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Who Are We? | Boulder Bright Lights</title>
-<meta name="description" content="Meet Ari and Aidan, the CU Boulder students and Boulder natives behind Boulder Bright Lights." />
+<title>Get a Free Quote | Boulder Bright Lights</title>
+<meta name="description" content="Request your free Christmas light installation quote in Boulder, CO. Tell us about your home and the colors you want, and we'll follow up fast." />
 <link rel="icon" href="images/BBlights logo.png" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -23,7 +23,7 @@
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">Who Are We?</a></li>
+        <li><a href="about.html">Who Are We?</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V5.5h-3c-2 0-3.5 1.5-3.5 3.5v2H8v3.5h2.5V21H14v-6.5h2.7l.5-3.5h-3.2V9c0-.6.4-1 1-1Z"/></svg>
         </a>
       </div>
-      <a href="quote.html" class="btn btn-gold btn-sm">Get Free Quote</a>
+      <a href="tel:7207173555" class="btn btn-gold btn-sm">Call Now</a>
     </div>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -46,66 +46,34 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="eyebrow">Who Are We?</div>
-    <h1>Two Boulder Natives, One Shared Love for the Holidays</h1>
-    <p>Founded by CU Boulder business students who wanted their first company to feel personal, reliable, and rooted in community.</p>
+    <div class="eyebrow">Free Quote</div>
+    <h1>Let's Design Your Display</h1>
+    <p>Tell us a little about your home and the look you're going for. We'll follow up fast with a custom quote, usually within a day.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="split reveal">
-      <div class="split-media">
-        <div class="frame">
-          <img src="images/ari-headshot.jpg" alt="Ari Hirsch, co-founder of Boulder Bright Lights" />
+    <div class="quote-wrap reveal">
+      <form class="form-card" id="quote-form" novalidate>
+        <h3>Request Your Free Quote</h3>
+        <p>No obligation, just a real answer from a real person on our crew.</p>
+        <div class="field">
+          <label for="q-name">Full Name</label>
+          <input type="text" id="q-name" name="name" placeholder="Ari Hirsch" required />
         </div>
-      </div>
-      <div>
-        <div class="eyebrow">Our Story</div>
-        <h2>Best Friends Since 8th Grade, Business Partners Since Freshman Year</h2>
-        <p>Boulder Bright Lights was founded by <strong>Ari and Aidan</strong>, Boulder natives and CU Boulder business students. We became best friends in 8th grade, and later roommates during our freshman year at the Leeds School of Business, where we combined our shared ambition for entrepreneurship to create our first company.</p>
-        <p>We're responsible, detail-oriented, and driven to succeed, not only in business, but in delivering an experience our neighbors can trust. By choosing us, you're supporting local students who take pride in every project and treat your home as if it were our own.</p>
-        <div class="values">
-          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Boulder Natives</span>
-          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>CU Boulder, Leeds School of Business</span>
-          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Detail-Oriented</span>
-          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Community-Rooted</span>
+        <div class="field">
+          <label for="q-phone">Phone Number</label>
+          <input type="tel" id="q-phone" name="phone" placeholder="(720) 555-0123" required />
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-pine">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow" style="justify-content:center;">What Drives Us</div>
-      <h2>Great Service Should Feel Personal</h2>
-    </div>
-    <div class="feature-band">
-      <div class="feature reveal">
-        <h3>Responsible</h3>
-        <p>We treat every home on our route with the same care we'd want for our own.</p>
-      </div>
-      <div class="feature reveal">
-        <h3>Detail-Oriented</h3>
-        <p>Every strand is planned, tested, and hung with precision. Nothing is an afterthought.</p>
-      </div>
-      <div class="feature reveal">
-        <h3>Community-Driven</h3>
-        <p>We're proud to support local students building something real for our neighbors.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="container reveal">
-    <h2>Let's Bring Your Vision to Life</h2>
-    <p>Reach out to Ari and Aidan directly to schedule your free lighting consultation.</p>
-    <div class="cta-actions">
-      <a href="tel:7207173555" class="btn btn-gold">Call 720-717-3555</a>
-      <a href="mailto:Boulderbrightlights@gmail.com" class="btn btn-outline">Email Us</a>
+        <div class="field">
+          <label for="q-details">Tell Us About Your Home &amp; Colors</label>
+          <textarea id="q-details" name="details" rows="6" placeholder="Home style, rooflines and trees, and the colors or look you're picturing (classic warm white, multicolor, red &amp; green, icicle lights, etc.)" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;">Request My Free Quote</button>
+        <p class="form-status" id="quote-status" role="status"></p>
+        <p class="form-note">Sending this opens your email app addressed to Boulderbrightlights@gmail.com. Prefer to talk now? <a href="tel:7207173555">Call or text 720-717-3555</a>.</p>
+      </form>
     </div>
   </div>
 </section>

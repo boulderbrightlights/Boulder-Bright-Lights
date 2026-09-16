@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSnow();
   initYear();
   initContactForm();
+  initQuoteForm();
 });
 
 function initNavToggle() {
@@ -124,7 +125,33 @@ function initContactForm() {
       `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
     );
     window.location.href = `mailto:Boulderbrightlights@gmail.com?subject=${subject}&body=${body}`;
-    status.textContent = 'Opening your email app to send this — talk soon!';
+    status.textContent = 'Opening your email app to send this. Talk soon!';
+    form.reset();
+  });
+}
+
+function initQuoteForm() {
+  const form = document.getElementById('quote-form');
+  if (!form) return;
+  const status = document.getElementById('quote-status');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const details = form.details.value.trim();
+
+    if (!name || !phone || !details) {
+      status.textContent = 'Please fill in your name, phone number, and a few details.';
+      return;
+    }
+
+    const subject = encodeURIComponent(`Free quote request from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\n\nHome & color details:\n${details}`
+    );
+    window.location.href = `mailto:Boulderbrightlights@gmail.com?subject=${subject}&body=${body}`;
+    status.textContent = 'Opening your email app to send this. Talk soon!';
     form.reset();
   });
 }

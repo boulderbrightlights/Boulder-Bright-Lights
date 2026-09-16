@@ -500,6 +500,12 @@ section { position: relative; }
 .cta-band p { color: rgba(251,248,241,0.85); max-width: 50ch; margin: 0 auto 34px; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* ---------- Quote page ---------- */
+.quote-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 /* ---------- Contact page ---------- */
 .contact-grid {
   display: grid;
