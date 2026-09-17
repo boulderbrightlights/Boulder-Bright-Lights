@@ -500,6 +500,28 @@ section { position: relative; }
 .cta-band p { color: rgba(251,248,241,0.85); max-width: 50ch; margin: 0 auto 34px; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* ---------- Festive accents (shared) ---------- */
+.section-frosted {
+  position: relative;
+  background-image:
+    radial-gradient(rgba(199,154,69,0.16) 1.4px, transparent 1.4px),
+    radial-gradient(rgba(199,154,69,0.12) 1.4px, transparent 1.4px);
+  background-size: 42px 42px;
+  background-position: 0 0, 21px 21px;
+}
+.ribbon-top {
+  position: relative;
+  overflow: hidden;
+}
+.ribbon-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--pine-700), var(--gold-400) 25%, var(--berry) 50%, var(--gold-400) 75%, var(--pine-700));
+  z-index: 2;
+}
+
 /* ---------- Contact page ---------- */
 .contact-grid {
   display: grid;
