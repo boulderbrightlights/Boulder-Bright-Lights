@@ -320,14 +320,14 @@ section { position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.78rem;
-  letter-spacing: 0.28em;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold-300);
   font-weight: 600;
   margin-bottom: 22px;
 }
-.hero-eyebrow svg { width: 16px; height: 16px; }
+.hero-eyebrow svg { width: 19px; height: 19px; }
 .hero h1 {
   color: var(--white);
   font-size: clamp(2.6rem, 6vw, 5rem);
