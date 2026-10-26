@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSnow();
   initYear();
   initContactForm();
+  initGallery();
 });
 
 function initNavToggle() {
@@ -126,5 +127,69 @@ function initContactForm() {
     window.location.href = `mailto:Boulderbrightlights@gmail.com?subject=${subject}&body=${body}`;
     status.textContent = 'Opening your email app to send this. Talk soon!';
     form.reset();
+  });
+}
+
+function initGallery() {
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  if (!items.length) return;
+
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Photo viewer');
+  box.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close photo">&times;</button>' +
+    '<button type="button" class="lightbox-prev" aria-label="Previous photo">&#8249;</button>' +
+    '<figure><img alt="" /><figcaption><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption></figure>' +
+    '<button type="button" class="lightbox-next" aria-label="Next photo">&#8250;</button>';
+  document.body.appendChild(box);
+
+  const img = box.querySelector('img');
+  const text = box.querySelector('.lightbox-text');
+  const count = box.querySelector('.lightbox-count');
+  const closeBtn = box.querySelector('.lightbox-close');
+  const prevBtn = box.querySelector('.lightbox-prev');
+  const nextBtn = box.querySelector('.lightbox-next');
+  let current = 0;
+  let lastFocus = null;
+
+  if (items.length < 2) { prevBtn.hidden = true; nextBtn.hidden = true; }
+
+  function show(i) {
+    current = (i + items.length) % items.length;
+    const item = items[current];
+    const thumb = item.querySelector('img');
+    img.src = item.getAttribute('href');
+    img.alt = thumb ? thumb.alt : '';
+    text.textContent = item.dataset.caption || '';
+    count.textContent = items.length > 1 ? (current + 1) + ' / ' + items.length : '';
+  }
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.classList.add('is-open');
+    document.body.classList.add('lightbox-open');
+    closeBtn.focus();
+  }
+  function close() {
+    box.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', (e) => { e.preventDefault(); open(i); });
+  });
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => show(current - 1));
+  nextBtn.addEventListener('click', () => show(current + 1));
+  box.addEventListener('click', (e) => { if (e.target === box) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
   });
 }
