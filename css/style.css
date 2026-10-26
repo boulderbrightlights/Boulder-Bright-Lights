@@ -565,6 +565,10 @@ section { position: relative; }
 }
 
 /* ---------- Gallery ---------- */
+.page-hero-compact { padding: 36px 0 30px; }
+.page-hero-compact h1 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0; }
+.gallery-section { padding: 44px 0 90px; }
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 380px));
